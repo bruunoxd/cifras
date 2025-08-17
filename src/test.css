@@ -1,0 +1,17 @@
+/* Teste CSS básico */
+body {
+  background: red !important;
+  color: white !important;
+}
+
+#root {
+  background: blue !important;
+  min-height: 100vh !important;
+  padding: 20px !important;
+}
+
+.app {
+  background: green !important;
+  min-height: 50vh !important;
+  padding: 20px !important;
+}

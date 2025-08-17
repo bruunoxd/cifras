@@ -1,0 +1,401 @@
+/* Página de Listas - Design Moderno */
+
+/* Header específico da página de listas */
+.page-header .header-actions {
+  width: auto !important;
+  min-width: 140px;
+}
+
+.page-header .btn-primary {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 140px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.page-header .btn-primary span {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Grid de listas */
+.listas-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin-bottom: 2rem;
+}
+
+/* Card da lista */
+.lista-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lista-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.lista-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+}
+
+.lista-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Header da lista */
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.lista-info {
+  flex: 1;
+}
+
+.lista-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lista-description {
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.lista-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.lista-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+/* Músicas na lista */
+.lista-songs {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.lista-songs h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.song-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.song-item:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.song-item-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.song-item-title {
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+.song-item-artist {
+  color: var(--gray-600);
+  font-style: italic;
+}
+
+.btn-small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  min-width: auto;
+}
+
+/* Gerenciamento de músicas */
+.lista-manage {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding-top: 1rem;
+}
+
+.manage-details {
+  border: none;
+}
+
+.manage-summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  list-style: none;
+  outline: none;
+}
+
+.manage-summary:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.manage-summary::-webkit-details-marker {
+  display: none;
+}
+
+.manage-content {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.songs-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary-color);
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+}
+
+.no-songs-message {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .listas-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lista-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .lista-actions {
+    justify-content: flex-end;
+  }
+
+  .song-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .song-item-info {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .listas-grid {
+    gap: 1.25rem;
+  }
+
+  .lista-card {
+    padding: 1rem;
+  }
+
+  .lista-title {
+    font-size: 1.1rem;
+  }
+
+  .manage-content {
+    max-height: 200px;
+  }
+
+  .checkbox-item {
+    padding: 0.375rem;
+  }
+}
+
+/* Estados especiais */
+.lista-card.favoritas {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.lista-card.favoritas::before {
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+}
+
+.lista-card.favoritas .lista-count {
+  background: rgba(245, 158, 11, 0.15);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Animações suaves */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lista-card {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* Scrollbar personalizada */
+.manage-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.manage-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.manage-content::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+.manage-content::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Estilos para tema escuro */
+.dark-theme .btn-small {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-color);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.dark-theme .btn-small:hover {
+  background: rgba(148, 163, 184, 0.2);
+  border-color: var(--primary-color);
+}
+
+.dark-theme .song-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.dark-theme .song-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.dark-theme .song-item-title {
+  color: var(--text-color);
+}
+
+.dark-theme .song-item-artist {
+  color: var(--text-secondary);
+}
+
+.dark-theme .manage-content {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.dark-theme .checkbox-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .checkbox-label {
+  color: var(--text-color);
+}
+
+.dark-theme .lista-songs {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.dark-theme .lista-songs h4 {
+  color: var(--text-color);
+}

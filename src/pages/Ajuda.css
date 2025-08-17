@@ -1,0 +1,550 @@
+/* Página de Ajuda - Design Moderno */
+
+/* Garantir que todos os elementos respeitem o container */
+.page-container {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.page-container * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grid principal */
+.help-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* Seções de ajuda */
+.help-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.help-section:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers das seções */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.section-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Cards de ajuda */
+.help-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 100%;
+  overflow: hidden;
+  padding-top: 1rem; /* Adicionar padding superior para dar espaço aos números */
+}
+
+.help-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem; /* Aumentar padding-top para dar espaço ao número */
+  position: relative;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-top: 1rem; /* Adicionar margem superior para evitar corte */
+}
+
+.help-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.help-step {
+  position: absolute;
+  top: -12px; /* Ajustar posição para não cortar */
+  left: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: white;
+  width: 2.5rem; /* Aumentar ligeiramente o tamanho */
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem; /* Aumentar fonte */
+  z-index: 10; /* Garantir que fique acima */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Adicionar sombra */
+}
+
+.help-card h3 {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.help-card p {
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.help-tips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.tip-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.help-tips small {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Grid de busca */
+.search-help-grid {
+  display: grid;
+  gap: 2rem; /* Aumentar gap entre cards */
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas no desktop */
+  max-width: 100%;
+  overflow: hidden;
+  align-items: stretch; /* Fazer todos os cards terem a mesma altura */
+}
+
+.search-type {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem 1.5rem; /* Aumentar padding superior */
+  text-align: center;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 220px; /* Altura mínima consistente */
+  max-width: 280px; /* Largura máxima para evitar cards muito largos */
+  margin: 0 auto; /* Centralizar cards */
+}
+
+.search-type:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.help-search-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 1.5rem auto;
+  flex-shrink: 0;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search-type:hover .help-search-icon {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.search-type h4 {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  font-size: 1.15rem;
+  min-height: 1.5rem; /* Altura mínima consistente para títulos */
+}
+
+.search-type p {
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1; /* Permitir que o texto ocupe espaço disponível */
+  min-height: 3rem; /* Altura mínima para o texto descritivo */
+}
+
+.example {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  border: 1px dashed rgba(102, 126, 234, 0.3);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  margin-top: auto; /* Empurrar para o fim do card */
+}
+
+/* Backup help */
+.backup-help {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.backup-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.backup-feature:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.backup-feature h4 {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.backup-feature p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--primary-color);
+}
+
+.faq-item summary {
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "▼";
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq-item summary:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.faq-content {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.faq-content p {
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.faq-content p:last-child {
+  margin-bottom: 0;
+}
+
+.code-example {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.code-example code {
+  color: var(--primary-color);
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Footer da ajuda */
+.help-footer {
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.footer-content p {
+  color: var(--text-secondary);
+  margin: 0 0 2rem 0;
+}
+
+.contact-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-options .btn {
+  min-width: 150px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .search-help-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .help-section {
+    padding: 1.5rem;
+  }
+
+  .help-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Manter espaçamento consistente */
+  }
+
+  .help-card {
+    margin-top: 1.25rem; /* Aumentar margem em dispositivos móveis */
+    padding: 2.25rem 1.25rem 1.25rem 1.25rem; /* Ajustar padding */
+  }
+
+  .search-help-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    gap: 1.5rem;
+  }
+
+  .search-type {
+    padding: 1.75rem 1.25rem;
+    min-height: 200px; /* Altura mínima para consistência */
+  }
+
+  .help-search-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .backup-help {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .backup-feature {
+    padding: 1.25rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .contact-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-footer {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-section {
+    padding: 1.25rem;
+    margin: 0 0.5rem;
+  }
+
+  .help-card {
+    padding: 2rem 1rem 1rem 1rem; /* Ajustar padding para mobile */
+    margin-top: 1.5rem; /* Aumentar margem para dispositivos muito pequenos */
+  }
+
+  .help-step {
+    width: 2.25rem; /* Ajustar tamanho em mobile */
+    height: 2.25rem;
+    font-size: 0.9rem;
+    top: -11px;
+  }
+
+  .search-type {
+    padding: 1.25rem;
+    min-height: auto; /* Remover altura mínima em mobile */
+  }
+
+  .help-search-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-type {
+    padding: 1.5rem 1rem;
+    min-height: auto; /* Remover altura mínima em mobile */
+    max-width: 100%; /* Permitir largura total em mobile */
+  }
+
+  .search-help-grid {
+    grid-template-columns: 1fr; /* Uma coluna apenas em mobile */
+    gap: 1.25rem;
+  }
+
+  .help-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .backup-help {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-icon {
+    font-size: 1.5rem;
+  }
+
+  .page-container {
+    padding: 1rem;
+  }
+}
+
+/* Animações */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.help-section {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.help-card {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.faq-item {
+  animation: slideInUp 0.3s ease-out;
+}

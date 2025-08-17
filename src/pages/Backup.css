@@ -1,0 +1,337 @@
+/* Página de Backup - Design Moderno */
+
+/* Grid principal */
+.backup-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin-bottom: 2rem;
+}
+
+/* Cards de backup */
+.backup-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.backup-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.backup-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.backup-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Variações dos cards */
+.cloud-card::before {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+}
+
+.cloud-card:hover {
+  border-color: #3b82f6;
+}
+
+.export-card::before {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.export-card:hover {
+  border-color: var(--primary-color);
+}
+
+.import-card::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.import-card:hover {
+  border-color: #10b981;
+}
+
+/* Ícones dos cards */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.backup-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.backup-card p {
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* Lista de recursos */
+.feature-list {
+  margin: 1.5rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.feature-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Estatísticas do backup */
+.backup-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stat-value {
+  color: var(--text-color);
+  font-weight: 600;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+/* Aviso de importação */
+.import-warning {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  color: #d97706;
+}
+
+.warning-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Input de arquivo */
+.file-input-wrapper {
+  position: relative;
+  display: block;
+}
+
+.file-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Botões de backup */
+.backup-btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.backup-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Seção de dicas */
+.tips-section {
+  margin-top: 3rem;
+}
+
+.tips-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.tips-header h3 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.tips-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.tip-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.tip-card h4 {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.tip-card p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .backup-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .backup-card {
+    padding: 1.5rem;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .tip-card {
+    padding: 1.25rem;
+  }
+
+  .tips-header h3 {
+    font-size: 1.3rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .backup-card {
+    padding: 1.25rem;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .backup-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .backup-btn {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Animações */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.backup-card {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.tip-card {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* Estados especiais */
+.backup-btn .spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

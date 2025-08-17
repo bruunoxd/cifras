@@ -1,0 +1,47 @@
+.chord-diagram {
+  display: inline-block;
+  margin: 0.5rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.chord-diagram .chord-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+}
+
+.chord-diagram .chord-not-found {
+  padding: 1rem;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.chord-diagram.small .chord-name {
+  font-size: 0.9em;
+}
+
+.chord-diagram.large .chord-name {
+  font-size: 1.3em;
+}
+
+.chord-diagram svg {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .chord-diagram svg {
+    background: #2a2a2a;
+    border-color: #555;
+  }
+  
+  .chord-diagram .chord-not-found {
+    border-color: #555;
+    color: #ccc;
+  }
+}

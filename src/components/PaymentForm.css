@@ -1,0 +1,436 @@
+/* Formulário de Pagamento - Design Moderno */
+
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.payment-container {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.payment-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.close-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-content {
+  padding: 2rem;
+}
+
+/* Resumo do pedido */
+.payment-summary {
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.payment-summary h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.order-item,
+.order-discount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.order-discount {
+  color: var(--success-color);
+  font-weight: 500;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+/* Formulário */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.875rem 1rem;
+  border: 2px solid rgba(148, 163, 184, 0.2);
+  border-radius: 8px;
+  background: white;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.error {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-group input:disabled {
+  background: rgba(248, 250, 252, 0.8);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Input do cartão com bandeira */
+.card-input-wrapper {
+  position: relative;
+}
+
+.card-brand {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.card-brand.visa {
+  color: #1a1f71;
+  border-color: #1a1f71;
+}
+
+.card-brand.mastercard {
+  color: #eb001b;
+  border-color: #eb001b;
+}
+
+.card-brand.amex {
+  color: #006fcf;
+  border-color: #006fcf;
+}
+
+.card-brand.discover {
+  color: #ff6000;
+  border-color: #ff6000;
+}
+
+/* Linha de formulário */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Mensagens de erro */
+.error-message {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Informações de segurança */
+.security-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.security-icon {
+  font-size: 1.2rem;
+  color: var(--success-color);
+}
+
+.security-info p {
+  margin: 0;
+  color: var(--success-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Informações de cartões de teste */
+.test-cards-info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.test-cards-info h5 {
+  margin: 0 0 0.75rem 0;
+  color: var(--info-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.test-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.test-card {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+}
+
+.test-cards-info small {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+/* Ações do formulário */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form-actions .btn {
+  flex: 1;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-actions .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-actions .btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.form-actions .btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.form-actions .btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 2px solid rgba(148, 163, 184, 0.3);
+}
+
+.form-actions .btn-secondary:hover:not(:disabled) {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-color);
+}
+
+/* Spinner de carregamento */
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .payment-overlay {
+    padding: 0.5rem;
+  }
+
+  .payment-container {
+    max-height: 95vh;
+  }
+
+  .payment-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .payment-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .payment-content {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-header {
+    padding: 1rem;
+  }
+
+  .payment-content {
+    padding: 1rem;
+  }
+
+  .payment-summary {
+    padding: 1rem;
+  }
+
+  .form-group input {
+    padding: 0.75rem;
+  }
+
+  .test-cards-info {
+    padding: 0.75rem;
+  }
+
+  .test-cards {
+    gap: 0.25rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

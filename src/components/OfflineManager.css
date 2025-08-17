@@ -1,0 +1,84 @@
+.offline-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+.offline-button:hover {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+.offline-button.offline {
+  color: #28a745;
+}
+
+.offline-button.loading {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.offline-button.small {
+  padding: 0.125rem;
+}
+
+.offline-button.large {
+  padding: 0.375rem;
+}
+
+.offline-label {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.offline-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Indicador de status offline */
+.offline-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8em;
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+}
+
+.offline-indicator {
+  width: 8px;
+  height: 8px;
+  background: #28a745;
+  border-radius: 50%;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .offline-button {
+    color: #ccc;
+  }
+  
+  .offline-button:hover {
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.2);
+  }
+  
+  .offline-button.offline {
+    color: #28a745;
+  }
+  
+  .offline-status {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+  }
+}
