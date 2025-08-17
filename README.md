@@ -481,9 +481,9 @@ SOFTWARE.
 
 **Bruno** - Desenvolvedor Full Stack
 
-- 🐙 **GitHub**: [@seu-usuario](https://github.com/bruunoxd)
+- 🐙 **GitHub**: [@bruunoxd](https://github.com/bruunoxd)
 - 📧 **Email**: bru_nnoxd@hotmail.com.br
-- 💼 **LinkedIn**: [Seu Perfil](https://linkedin.com/in/bruno-garciaxd)
+- 💼 **LinkedIn**: [Bruno](https://linkedin.com/in/bruno-garciaxd)
 
 ## 🙏 Agradecimentos
 
