@@ -36,21 +36,25 @@ Obrigado por seu interesse em contribuir! 🎉
 ## 📋 Diretrizes de Código
 
 ### TypeScript
+
 - Todo código deve ser tipado
 - Use interfaces para objetos complexos
 - Evite `any` - prefira `unknown` quando necessário
 
 ### React
+
 - Use functional components e hooks
 - Componentes devem ter uma única responsabilidade
 - Props devem ser tipadas com interfaces
 
 ### CSS
+
 - Use CSS modules ou styled-components
 - Mantenha consistência com o design system
 - Prefira CSS Grid/Flexbox para layouts
 
 ### Commits
+
 Use o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
@@ -80,6 +84,7 @@ npm run test:coverage
 ## 🏗️ Setup de Desenvolvimento
 
 1. **Clone e instale**:
+
 ```bash
 git clone https://github.com/seu-usuario/cifras.git
 cd cifras
@@ -87,12 +92,14 @@ npm install
 ```
 
 2. **Configure o ambiente**:
+
 ```bash
 cp .env.example .env.local
 # Edite .env.local com suas credenciais
 ```
 
 3. **Inicie o servidor**:
+
 ```bash
 npm run dev
 ```
@@ -106,16 +113,19 @@ npm run dev
 ## 🎯 Prioridades Atuais
 
 ### Alta Prioridade
+
 - [ ] Testes unitários para componentes principais
 - [ ] Melhoria da performance mobile
 - [ ] Acessibilidade (ARIA labels, teclado)
 
 ### Média Prioridade
+
 - [ ] Suporte para piano
 - [ ] Themes customizáveis
 - [ ] Exportação para PDF
 
 ### Baixa Prioridade
+
 - [ ] Integração com Spotify
 - [ ] Gravação de áudio
 - [ ] Compartilhamento social

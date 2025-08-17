@@ -8,6 +8,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 ## [1.0.0] - 2024-08-17
 
 ### ✨ Adicionado
+
 - **Visualizador avançado de cifras** com posicionamento automático de acordes
 - **Sistema de autenticação** completo com Supabase Auth
 - **CRUD de músicas** com busca em tempo real
@@ -27,6 +28,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 - **Backup e restauração** de dados
 
 ### 🎨 Interface
+
 - **Design moderno** com CSS Grid e Flexbox
 - **Animações suaves** e feedback visual
 - **Componentes reutilizáveis** bem estruturados
@@ -34,18 +36,21 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 - **Cores e temas** consistentes
 
 ### ⚡ Performance
+
 - **Bundle otimizado** (~140KB gzipped)
 - **Lazy loading** de componentes
 - **Cache inteligente** com Service Worker
 - **IndexedDB** para armazenamento offline eficiente
 
 ### 🔒 Segurança
+
 - **Row Level Security (RLS)** no Supabase
 - **Autenticação JWT** segura
 - **Políticas de acesso** granulares
 - **Variáveis de ambiente** protegidas
 
 ### 🛠️ Tecnologias
+
 - **React 18.3.1** com hooks modernos
 - **TypeScript 5.5.4** para tipagem segura
 - **Vite 5.4.3** como build tool
@@ -54,12 +59,14 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 - **Dexie.js 4.0.8** para IndexedDB
 
 ### 📱 Recursos Mobile
+
 - **Touch gestures** otimizados
 - **Viewport** responsivo
 - **Scroll nativo** suave
 - **Orientação** adaptável
 
 ### 🎵 Recursos Musicais
+
 - **Parser de cifras** inteligente
 - **Detecção automática** de acordes
 - **Transposição** com algoritmo preciso
@@ -69,12 +76,14 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 ## [0.9.0] - 2024-08-10
 
 ### ✨ Adicionado
+
 - Estrutura inicial do projeto
 - Configuração do Vite + React + TypeScript
 - Setup básico do Supabase
 - Componentes base da interface
 
 ### 🔧 Configuração
+
 - ESLint e Prettier
 - Configuração do TypeScript
 - Estrutura de pastas organizada
@@ -82,6 +91,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 ## [0.8.0] - 2024-08-05
 
 ### ✨ Adicionado
+
 - Planejamento inicial do projeto
 - Definição da arquitetura
 - Escolha das tecnologias
