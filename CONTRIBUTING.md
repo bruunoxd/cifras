@@ -133,7 +133,7 @@ npm run dev
 ## ❓ Dúvidas
 
 - Abra uma Issue com a tag `question`
-- Entre em contato via email: seu-email@exemplo.com
+- Entre em contato via email: bru_nnoxd@hotmail.com.br
 
 ## 🙏 Agradecimentos
 
