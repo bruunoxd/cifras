@@ -46,14 +46,7 @@ Um aplicativo PWA (Progressive Web App) construído com **React + TypeScript + S
 
 ## 📸 Screenshots
 
-### Desktop - Modo Claro
-![Desktop Light Mode](docs/desktop-light.png)
-
-### Mobile - Modo Escuro
-![Mobile Dark Mode](docs/mobile-dark.png)
-
-### Visualizador de Cifras
-![Cifra Viewer](docs/cifra-viewer.png)
+--- Em breve ---
 
 ## 🚀 Começando
 
@@ -488,9 +481,9 @@ SOFTWARE.
 
 **Bruno** - Desenvolvedor Full Stack
 
-- 🐙 **GitHub**: [@seu-usuario](https://github.com/seu-usuario)
-- 📧 **Email**: seu-email@exemplo.com
-- 💼 **LinkedIn**: [Seu Perfil](https://linkedin.com/in/seu-perfil)
+- 🐙 **GitHub**: [@seu-usuario](https://github.com/bruunoxd)
+- 📧 **Email**: bru_nnoxd@hotmail.com.br
+- 💼 **LinkedIn**: [Seu Perfil](https://linkedin.com/in/bruno-garciaxd)
 
 ## 🙏 Agradecimentos
 
